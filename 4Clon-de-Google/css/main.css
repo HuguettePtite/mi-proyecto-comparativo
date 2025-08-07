@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+}
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+header nav .nav-right-section {
+    width: 250px;
+    height: auto;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+nav .nav-right-section a {
+    margin-right: 10px;
+    color: #000000;
+}
+nav .nav-right-section .menu-icon {
+    background-image: url('https://static.thenounproject.com/png/756729-200.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+}
+nav .nav-right-section img {
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+main {
+    margin-top: 150px;
+    text-align: center;
+}
+main .main-logo {
+    width: 530px;
+    margin: 0 auto; /*sirve par la parte flexible, de forma automatica se va posicionand, divide lo que le sobra entre dos*/
+    margin-bottom: 35px;
+}
+main .main-logo img {
+    width: 300px;
+    height: auto;
+}
+
+main .main-input {
+    width: 530px;
+    margin: 0 auto;
+    margin-bottom: 35px; /*empuja botnoes*/
+}
+main .main-input-container {
+    width: 525px;
+    border-radius: 100px;
+    border: 1px solid #dfe1e5;
+    display: flex; /*ayud a posicionar en linea*/
+    justify-content: center;
+    align-items: center;
+}
+/*ahora le voy a quitar el outline negro cuando le paso mouse al input*/
+main .main-input input {
+    width: 450px; /*debe ser más pequeño que su contenedro padre*/
+    height: 40px;
+    border: none;
+    outline: none;
+}
+/*2 iconos de input y efecto de hover*/
+/*efecto hover resalta el borde al pasar el cursor*/
+main .main-input-container:hover {
+    box-shadow: 0 1px 6px #20212447;
+    border-color: #dfe1e500;
+}
+/*íconos*/
+main .main-input .search-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_search_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+}
+main .main-input .micro-icon {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+/*ultima seccion del main, botones*/
+main .main-buttons {
+    width: 530px;
+    margin: 0 auto; /*se posicione en el centro y sea flexible*/
+}
+/*quitar el display block que le da por defecto el navegador a los botones, por eso eran verticales, los quiero horizontales*/
+main .main-buttons div {
+    display: inline-block;
+}
+main .main-buttons button {
+    height: 36px;
+    background-color: #f2f2f2;
+    border: none;
+    font-size: 14px;
+    color: #5f6368;
+    border-radius: 5px;
+    padding: 0 15px;
+    margin-right: 15px;
+}
+/*efecto hover a botones*/
+main .main-buttons button:hover {
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px #000001;
+    color: #222;
+}
+/*footer, 1 seccion con dos contenedroes con etiquetas ancla que nos llevan a ambos lados*/
+footer {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0; /*lo posiciona al final de la pag*/
+    display: grid; /*genera la cuadricula*/
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    font-size: 13px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #c4c4c4;
+}
+
+footer ul {
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+/*posicionar elementos*/
+footer .footer-left {
+    justify-self: left;
+}
+footer .footer-right {
+    justify-self: right;
+}
+/*separar elementos links y cambiar color fuente*/
+footer ul li a {
+    margin: 10px;
+    color: #5f6368;
+}

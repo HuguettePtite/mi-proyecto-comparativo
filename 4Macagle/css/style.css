@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3de8f8;
+    font-size: 14px;
+    font-family: 'Comfortaa', sans-serif;
+    /*background-image: url('../assets/img/fondo.png'); */
+}
+header {
+    width: 100%;
+    /* 140px puede ser demasiado alto; puedes probar con un valor más pequeño */
+    height: 140px; 
+    padding-bottom: 10px;
+    /* Usa un layout de grid para la cabecera */
+    display: grid;
+    /* 1fr para que ocupe todo el espacio disponible */
+    grid-template-rows: 1fr;
+}
+header .header-nav {
+    /* La navegación ocupa todo el ancho y se convierte en un contenedor flexible */
+    display: flex;
+    width: 100%;
+    /* Alinea el contenido a la derecha */
+    justify-content: flex-end;
+}
+.header-links {
+    width: fit-content; /* O width: auto; */
+    height: auto;
+    /* display: flex es perfecto para alinear los elementos de la lista */
+    display: flex;
+    /* Alinea los elementos al final del contenedor horizontalmente */
+    justify-content: flex-end;
+    /* Alinea los elementos al centro del contenedor verticalmente */
+    align-items: center; 
+    /* Quita los puntos de la lista y el relleno por defecto */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* Un pequeño margen a la derecha para separarlo del borde de la pantalla */
+    margin-right: 5px; 
+}
+.header-links li {
+    /* Convierte cada <li> en un contenedor Flexbox */
+    display: flex;
+    /* Apila los elementos hijos (a e img) verticalmente */
+    flex-direction: column;
+    align-items: center;
+    /* Elimina el padding de 20px, ya que Flexbox se encarga de la separación */
+    padding: 0;
+    /* Agrega un poco de margen entre cada li para separarlos */
+    margin: 0 10px;
+    width: auto;
+    height: auto;    
+}
+/* Ahora ajusta los estilos de la imagen y el enlace dentro del li */
+.header-links li a {
+    /* Quita el subrayado y cambia el color del texto */
+    text-decoration: none;
+    color: black;
+    /* Puedes ajustar el tamaño de la fuente si lo deseas */
+    font-size: 14px;
+}
+.header-links li img {
+    width: 50px; /* Reducimos el tamaño para que se parezca más a un ícono */
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 5px; /* Agrega un pequeño espacio entre la imagen y el texto */
+}
+
+/* --- Contenido principal --- */
+.main-content {
+    display: flex; /* Centra el contenido horizontal y verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: calc(100vh - 140px - 100px); /* 100vh - header - footer */
+}
+.main-content .logo-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+.logo-container img {
+    width: 400px;
+    height: auto;
+}
+
+/* --- Formulario de búsqueda --- */
+.search-form {
+    /* Aquí es donde empiezas a darle estilos a tu formulario */
+    width: 100%;
+    max-width: 580px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+}
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.search-input {
+    max-width: 580px;
+    flex-grow: 1;
+    border: none;
+    border-radius: 24px;
+    padding: 10px;
+    outline: none;
+}
+.input-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 10px;
+}
+.icon-button img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/*Accesos directos*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.shortcut-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+.shortcut-item img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 8px;/* <-- Agrega espacio entre el ícono y el nombre */
+}
+
+/*footer*/
+.text {
+    width: 100%;
+    background-color: #b7e2fa;
+    display: grid;
+    grid-row: 2fr;
+    position: fixed;
+    bottom: 0;
+    padding: 15px 5px;
+}
+.footer-region {
+    border-bottom: 1px solid #dadce0;
+    color: #70757a;
+    font-size: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+.footer-links-bottom {
+    display: flex;
+    align-items: center;  
+    padding-top: 10px;
+}
+.footer-links-wrapper {
+    display: flex;
+    gap: 500px;
+}
+.footer-left-links,
+.footer-right-links {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+}
+.footer-left-links li a,
+.footer-right-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
